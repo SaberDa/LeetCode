@@ -20,25 +20,18 @@ int main() {
     nums.push_back(8);
     nums.push_back(9);
 
-    vector<int> res;
-
-    int first = 0;
-    int last = first + 1;
-    int temp = first;
-
-    while (last <= nums.size()) {
-        if (nums[temp]+1 != nums[last]) {
-            // int k = nums[temp];
-            res.push_back(nums[temp]);
-            res.push_back(nums[temp+1]);
-            temp++;
-            last++;
-        } else {
-            temp = last;
-            last++;
+    vector<string> res;
+    int i = 0;
+    int j = i+1;
+    for (; j < nums.size(); i = j, j = i+1) {
+        while (j < nums.size() && nums[j] == nums[j-1]+1) j++;
+        if (i == j-1) {
+            res.push_back(to_string(nums[i]));
+        } else { 
+            res.push_back(to_string(nums[i]) + "->" + to_string(nums[j-1]));
         }
-
     }
+
 
     for (int i = 0; i < res.size(); i++) {
         cout << res[i] << endl;
