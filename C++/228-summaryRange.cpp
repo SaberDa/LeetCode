@@ -23,7 +23,7 @@ int main() {
     vector<string> res;
     int i = 0;
     int j = i+1;
-    for (; j < nums.size(); i = j, j = i+1) {
+    for (; i < nums.size(); i = j, j = i+1) {
         while (j < nums.size() && nums[j] == nums[j-1]+1) j++;
         if (i == j-1) {
             res.push_back(to_string(nums[i]));
