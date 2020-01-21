@@ -1,10 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 
 using namespace std;
 
-int main() {
+int solution1() {
     vector<int> nums;
     nums.push_back(0);
     nums.push_back(1);
@@ -34,6 +35,26 @@ int main() {
         }
     }
 
+    cout << ans << endl;
+    return 0;
+}
+
+int main() {
+    vector<int> nums;
+    nums.push_back(0);
+    nums.push_back(1);
+    nums.push_back(2);
+    nums.push_back(1);
+    
+    int ans = 0;
+    unordered_map<int, int> m;
+    for (auto x : nums) {
+        if (m[x]) continue;
+        int left = m[x-1];
+        int right = m[x+1];
+        m[x+right] = m[x-left] = m[x] = right + left + 1;
+        ans = max(ans, m[x]);
+    }
     cout << ans << endl;
     return 0;
 }
