@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 
@@ -19,18 +20,27 @@ int main() {
     word1 = "makes";
     word2 = "makes";
 
-    // greaty algorithm
-    int i1 = -1;
-    int i2 = -2;
-    int res = words.size();
+    vector<int> s1;
+    vector<int> s2;
     for (int i = 0; i < words.size(); i++) {
-        if (words[i] == word1 && i1 != i2) {
-            i1 = i;
-        } else if (words[i] == word2 && i1 != i2) {
-            i2 = i;
+        if (words[i] == word1) {
+            s1.push_back(i);
         }
-        if (i1 != -1 && i2 != -2) {
-            res = min(res, abs(i2 - i1));
+        if (words[i] == word2 ) {
+            s2.push_back(i);
+        }
+    }
+    int i = 0;
+    int j = 0;
+    int res = words.size();
+    while (i < s1.size() && j < s2.size()) {
+        if (s1[i] != s2[j])  {
+            res = min(abs(s1[i] - s2[j]), res);
+        }
+        if (s1[i] <= s2[j]) {
+            i++;
+        } else {
+            j++;
         }
     }
 
