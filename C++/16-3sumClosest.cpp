@@ -14,6 +14,15 @@ int main() {
     nums.push_back(-3);
     int target = 1;
 
+
+    // two pointers
+    // first sort the input vector
+    // fix one element
+    // then make the next element as the left pointer
+    // make the last element as the right pointer
+    // compare the abs with these three elements sum with the targer
+    // reflesh the res which the min
+
     vector<int> result;
     int final = 0;
     if (nums.empty()) {
@@ -44,17 +53,14 @@ int main() {
             if (abs(res - target) < abs(init - target)) {
                 init = res;
             }
-                if (res > target) {
-                    r--;
-                } else if (res == target) {
-                    break;
-                } else {
-                    m++;
-                }
-            
-        }
-        
-        
+            if (res > target) {
+                r--;
+            } else if (res == target) {
+                break;
+            } else {
+                m++;
+            }   
+        }   
     }
     cout << init << endl;
 

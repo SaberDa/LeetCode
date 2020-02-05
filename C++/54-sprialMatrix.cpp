@@ -10,6 +10,15 @@ int main() {
     matrix.push_back({8, 4});
     matrix.push_back({0, -1});
 
+
+    // set the bound of four corners
+    // each move push the element from the min to max or from max to min
+    // then min++ or max--
+    // notice: 
+    // when we push the element from the right to left or from the bottom to top
+    // we should judge the relationship of the min and max again
+    // because they may cross the border during the above ecexutions
+
     vector<int> res;
     if (matrix.empty()) {
         return 0;

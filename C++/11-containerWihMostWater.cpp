@@ -17,6 +17,12 @@ int main() {
     height.push_back(3);
     height.push_back(7);
 
+
+    // two pointers
+    // every time move one of the pointers,
+    // first compare the current result with the old result
+    // then length minus 1
+    // compare two pointers and move
     int res = 0;
     int length = height.size() - 1;
     int l = 0;

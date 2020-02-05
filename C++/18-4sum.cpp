@@ -15,6 +15,19 @@ int main() {
     nums.push_back(2);
     int target = -1;
 
+    // two pointers
+    // first sort the input vector
+    // fix the first element, and jump over the duplicate element
+    // then fix the next element as the second element, and jump over the duplicate element
+    // make the sum of the first and the second element as res1
+    // then make the next element of second element as the left pointer
+    // make the last element as the right pointer
+    // make the sum of left pointer and right pointer as res2
+    // judge the sum of re1 and res2 euqals to target
+    // if the sum is larger than the target, move the right pointer and jump over the duplicate elements
+    // else if the sum is less than the target, move the left pointer and jump over the duplicate elements
+    
+
     vector<vector<int>> res;
     if (nums.size() < 4) {
         return 0;

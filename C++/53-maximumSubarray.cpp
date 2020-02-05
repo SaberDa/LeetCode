@@ -17,6 +17,10 @@ int main() {
     nums.push_back(-5);
     nums.push_back(4);
 
+    // because the result is the contiguous subarray
+    // so we just need to compare the next element and the sum of next element plus current sum
+    
+
     int res = nums[0];
     int maxR = res;
 

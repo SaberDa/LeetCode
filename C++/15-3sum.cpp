@@ -85,6 +85,18 @@ int main() {
     //     }
     // }
 
+    // two pointers
+    // first sort the input vector
+    // then fix one element, 
+    // and choose the next element and the last element as the pointers
+    // move them
+    // if the three elements' sum equals zero, 
+    // then push the three elements and move the both of pointers
+    // else if sum larger than the zero, 
+    // then move the left point
+    // else if sum less than the zero,
+    // then move the right point
+    // remember to jump over the duplicate elements, all of three elements
 
     vector<vector<int>> res;
     if (nums.size() < 3) {

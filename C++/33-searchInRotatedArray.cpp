@@ -17,6 +17,20 @@ int main() {
 
     target = 1;
 
+
+    // binary search
+    // because the new vector is the rotated one
+    // so we can use the mid one to judge where the rotate starts
+    // if the mid is larger than the right bound
+    // which means the origin first element is on the right side
+    //  in this case, if the target is less than the mid and larger the left
+    //  the target element may exist in the left side
+    // else if the mid is less than the right bound
+    // which means the origin first element is on the left side
+    //  in this case, if the target is larger than the mid and less than the right
+    //  the target element may exist in the right side
+
+
     if (nums.empty()) {
         return -1;
     }

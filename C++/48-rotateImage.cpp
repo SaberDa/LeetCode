@@ -10,6 +10,9 @@ int solution1() {
     matrix.push_back({13, 3, 6, 7});
     matrix.push_back({15, 14, 12, 16});
 
+    // first transcope
+    // next exchange
+
     if (matrix.empty()) {
         return 0;
     }
@@ -45,6 +48,13 @@ int main() {
     matrix.push_back({2, 4, 8, 10});
     matrix.push_back({13, 3, 6, 7});
     matrix.push_back({15, 14, 12, 16});
+
+    // use the math way to solve
+    // every time move the four corners
+    // the left top corner becomes the right top corner
+    // the right top corner becomes the right bottom corner
+    // the right bottom corner becomes the left bottom corner
+    // the left corner becomes the left top corner
 
     int n = matrix.size() - 1;
     for (int i = 0; i < matrix.size()/2; i++) {

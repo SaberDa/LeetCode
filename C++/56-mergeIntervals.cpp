@@ -53,6 +53,13 @@ int main() {
     intervals.push_back({15, 18});
 
 
+    // sliding window
+    // first sort the two-dimensional vector
+    // if current window's second bound is larger than the next vector's first bound
+    // combine next vector into current window
+    // use the max bound of current window's second bound and next vector's second bound
+    
+
     vector<vector<int>> res;
     if (intervals.empty()) {
         return 0;

@@ -72,6 +72,16 @@ int main() {
     vector<vector<int>> newInterval;
     newInterval.push_back({2, 5});
 
+    // first, find the index that insert vector should be inserted
+    // we just compare the vector's second bound with the insert vector's first bound
+    // if current vector's second bound is less than the insert vector's first bound
+    // then push current vector into result and judge next vector
+    // if current vector's second bound is larger than the insert vector's fitst bound
+    // we combine current vector and insert vector as a new vector
+    // this new vector's first bound is current vector's first bound
+    // the second bound is the max of current vector's second bound and insert vector's second bound
+    // then push the left vectors in the origin vector into result
+
     vector<vector<int>> res;
     if (newInterval.empty()) {
         // return intervals;
