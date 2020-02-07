@@ -17,6 +17,12 @@ int main() {
 
     // solution 1
     // two pointers
+    // use pointers to present the left and right histogram
+    // make sure the min height is the chosen one
+    // move the left and right pointers until they are less then the mid
+    // the area is mid.height*(right-left-1)
+    // repeat and find the max area
+
     // int res = 0;
     // int left;
     // int right;
@@ -36,6 +42,10 @@ int main() {
 
     // solution 2
     // monotonic stack
+    // make sure the elements in stack is monotonic increase
+    // if next element is larger than the top element, push it
+    // if next element is less than the top element,
+    // then pop the top element and calculate the area
     int res = heights[0];
     stack<int> s;
     int i = 0;

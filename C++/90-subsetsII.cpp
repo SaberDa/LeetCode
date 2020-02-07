@@ -18,7 +18,10 @@ int main() {
 
     backtrack(nums, 0, vector<int> (), res);
 
-    
+    // use backtrack to generate all the subsets
+    // sort the results
+    // then find the repeated ones
+    // delete them
 
     for (int i = 0; i < res.size(); i++) {
         sort(res[i].begin(), res[i].end());
