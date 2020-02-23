@@ -1,17 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
 
 int main() {
 
     vector<int> nums;
-    nums.push_back(1);
-    nums.push_back(2);
-    nums.push_back(3);
-    nums.push_back(1);
-    nums.push_back(2);
-    nums.push_back(3);
+    nums.push_back(99);
+    nums.push_back(99);
     int k = 2;
 
     bool res = false;
@@ -20,15 +17,22 @@ int main() {
         return 0;
     }
 
-    for (int i = 0; i < nums.size() - k; i++) {
-        if (nums[i] == nums[i+k]) {
-            res = true;
-            break;
+    unordered_map<int, int> m;
+
+
+
+    for (int i = 0; i < nums.size(); i++) {
+        if (m.count(nums[i])) {
+            if (i-m[nums[i]] <= k) {
+                res = true;
+            }
+            m[nums[i]] = i;
+        } else {
+            m[nums[i]] = i;
         }
     }
 
     cout << res << endl;
 
-    return 0;
 
 }

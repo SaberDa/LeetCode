@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
@@ -16,13 +17,23 @@ int main() {
         return 0;
     }
 
-    sort(nums.begin(), nums.end());
+    
 
     bool res = false;
 
-    for (int i = 1; i < nums.size(); i++) {
-        if (nums[i-1] == nums[i]) {
+    // sort(nums.begin(), nums.end());
+    // for (int i = 1; i < nums.size(); i++) {
+    //     if (nums[i-1] == nums[i]) {
+    //         res = true;
+    //     }
+    // }
+
+    unordered_map<int, int> m;
+    for (auto i : nums) {
+        m[i]++;
+        if (m[i] > 1) {
             res = true;
+            break;
         }
     }
 
