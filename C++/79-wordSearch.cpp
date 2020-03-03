@@ -21,6 +21,23 @@ void backtrack(vector<vector<char>>& board, int pos, int r, int c, int m, int n,
     board[r][c] = temp;
 }
 
+bool BFS(vector<vector<char>>& board, int r, int c, int m, int n, int len, string& word) {
+    if (len == word.size()) {
+        return true;
+    }
+    if (r < 0 || c < 0 || r >= m || c >= n || board[r][c] == '0' || board[r][c] != word[len]) {
+        return false;
+    }
+    char temp = board[r][c];
+    board[r][c] = '0';
+    bool found = BFS(board, r+1, c, m, n, len+1, word) ||
+                 BFS(board, r-1, c, m, n, len+1, word) ||
+                 BFS(board, r, c-1, m, n, len+1, word) ||
+                 BFS(board, r, c+1, m, n, len+1, word);
+    board[r][c] = temp;
+    return found;
+}
+
 int main() {
 
     vector<vector<char>> board;
@@ -38,15 +55,25 @@ int main() {
         cout << res << endl;
     }
     int n = board[0].size();
+    // for (int i = 0; i < m; i++) {
+    //     for (int j = 0; j < n; j++) {
+    //         if (board[i][j] == word[0]) {
+    //             backtrack(board, 1, i, j, m, n, word, res);
+    //         }
+    //         if (res) {
+    //             cout << res << endl;
+    //         }
+            
+    //     }
+    // }
+
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            if (board[i][j] == word[0]) {
-                backtrack(board, 1, i, j, m, n, word, res);
+            if (board[i][j] == word[0] && BFS(board, i, j, m, n, 0, word)) {
+               res = true;
+               cout << res << endl; 
+               return 0;
             }
-            if (res) {
-                cout << res << endl;
-            }
-            
         }
     }
 
