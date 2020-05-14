@@ -15,6 +15,6 @@ public:
         sum = w;
     }
     int pickIndex() {
-        return upper_bound(begin(sum), end(sum), rand() % sum.back()) - begin(sum);
+        return upper_bound(sum.begin(), sum.end(), rand() % sum.back()) - sum.begin();
     }
 };
