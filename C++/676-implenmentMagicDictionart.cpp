@@ -54,6 +54,7 @@ public:
                 if (node->next[j] == node->next[c - 'a']) continue;
                 if (node->next[j] && find(node->next[j], word.substr(i + 1))) return true;
             }
+            if (node->next[c - 'a']) node = node->next[c - 'a'];
         }
         return false;
     }
