@@ -18,7 +18,8 @@ int findCircleNum(vector<vector<int>>& M) {
             if (M[i][j]) {
                 int root1 = find(parents, i);
                 int root2 = find(parents, j);
-                parents[root1] = parents[root2];
+                if (root1 != root2) parents[root1] = root2;
+                // parents[root1] = parents[root2];
             }
         }
     }
