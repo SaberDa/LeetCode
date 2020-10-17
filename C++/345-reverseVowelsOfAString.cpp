@@ -13,9 +13,7 @@ string reverseVowels(string s) {
     int l = 0, r = s.size() - 1;
     while (l <= r) {
         if (isVowels(tolower(s[l])) && isVowels(tolower(s[r]))) {
-            char temp = s[l];
-            s[l] = s[r];
-            s[r] = temp;
+            swap(s[l], s[r]);
             l++, r--;
         } else if (isVowels(tolower(s[l])) && !isVowels(tolower(s[r]))) {
             r--;
