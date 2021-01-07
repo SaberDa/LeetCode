@@ -10,21 +10,21 @@ bool judge(vector<vector<int>> &board, int m, int n) {
             if (board[i][j] == 0) continue;
             int r = i, c = j, count = 0;
             while (c < n && board[i][c] == board[i][j]) {
-                c++;
-                count++;
+                ++c;
+                ++count;
             }
             if (count >= 3) {
                 canCrushed = true;
-                while (c > j) copy[i][c--] = 0;
+                while (c > j) copy[i][--c] = 0;
             }
             count = 0;
             while (r < m && board[r][j] == board[i][j]) {
-                r++;
-                count++;
+                ++r;
+                ++count;
             }
             if (count >= 3) {
                 canCrushed = true;
-                while (r > i) copy[r--][j] = 0;
+                while (r > i) copy[--r][j] = 0;
             }
         }
     }
