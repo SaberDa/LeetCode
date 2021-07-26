@@ -9,7 +9,7 @@ public:
                     second = first;
                     first = cur;
                 } else if (cur != first && cur > second) {
-                    second = cur;
+                    second = cur;    
                 }
             }
         }
